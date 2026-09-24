@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* ==============================
+        Google Font
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800;900&display=swap');
 
 
 /* ==============================
@@ -12,32 +16,121 @@
     font-family: "Lato", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f7fb;
+    color: #172033;
+}
+
 
 /* ==============================
         Hero Section Start
 ================================= */
 
 .hero {
-    background-image: url("/img/dd.avif");
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 15, 35, 0.35),
+            rgba(8, 15, 35, 0.65)
+        ),
+        url("/img/dd.avif");
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 90%,
+        92% 100%,
+        8% 100%,
+        0 90%
+    );
+
+    padding: 40px;
+}
+
+
+/* ==============================
+        Hero Content
+================================= */
+
+.hero-content {
+    max-width: 1000px;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+    opacity: 0.9;
 }
 
 .hero h1 {
-    color: black;
-    font-size: 75px;
-    text-align: center;
+    font-size: 72px;
+    line-height: 1.1;
     font-weight: 900;
-    padding-top: 50px;
-    word-spacing: 10px;
-    letter-spacing: 10px;
-    font-family: cursive;
-    white-space: nowrap;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
 }
 
-/* Hero Section End */
+.hero-text {
+    max-width: 650px;
+    margin: auto;
+
+    font-size: 20px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* ==============================
+        Hero Button
+================================= */
+
+.hero-btn {
+    display: inline-block;
+
+    margin-top: 35px;
+    padding: 15px 35px;
+
+    background: white;
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    border-radius: 50px;
+
+    transition: 0.4s ease;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+}
 
 
 /* ==============================
@@ -46,35 +139,97 @@
 
 .red {
     width: 80%;
-    margin: 60px auto;
-    background: linear-gradient(
-        to right,
-        rgb(0, 187, 255),
-        rgb(255, 0, 187)
-    );
-    padding: 70px;
-    border: 5px solid rgb(255, 0, 247);
+    max-width: 1100px;
+
+    margin: 80px auto;
+
+    padding: 60px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8f9ff
+        );
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    box-shadow:
+        0 20px 60px rgba(30, 41, 59, 0.08);
+
+    transition: 0.4s ease;
 }
 
-.red h2 {
-    text-align: center;
-    font-size: 48px;
-    border-bottom: 2px solid red;
-    margin: auto;
-    padding-bottom: 30px;
+.red:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 30px 70px rgba(30, 41, 59, 0.13);
 }
+
+
+/* ==============================
+        Section Tag
+================================= */
+
+.section-tag {
+    display: block;
+
+    text-align: center;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    color: #7c3aed;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+        Content Heading
+================================= */
+
+.red h2,
+#cow-type h2 {
+    text-align: center;
+
+    font-size: 44px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+
+    color: #111827;
+}
+
+
+/* ==============================
+        Content Paragraph
+================================= */
 
 .red p {
-    font-size: 24px;
-    line-height: 2em;
+    font-size: 20px;
+
+    line-height: 1.9;
+
+    text-align: center;
+
+    color: #667085;
 }
 
 .red p .imp {
-    font-size: 1.5em;
-    color: white;
-}
+    color: #7c3aed;
 
-/* Content Section End */
+    font-size: 1.1em;
+
+    font-weight: 700;
+}
 
 
 /* ==============================
@@ -82,25 +237,55 @@
 ================================= */
 
 #cow-type {
-    width: 80%;
-    margin: 60px auto 30px;
-    background: linear-gradient(
-        to right,
-        rgb(0, 187, 255),
-        rgb(255, 0, 187)
-    );
-    padding: 40px;
-    border: 5px solid rgb(255, 0, 247);
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 80px auto;
+
+    padding: 60px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8f9ff
+        );
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(124, 58, 237, 0.12);
+
+    box-shadow:
+        0 25px 70px rgba(30, 41, 59, 0.1);
+
+    transition: 0.4s ease;
 }
+
+#cow-type:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 35px 80px rgba(30, 41, 59, 0.15);
+}
+
+
+/* ==============================
+        Cow Heading
+================================= */
 
 #cow-type h2 {
-    text-align: center;
-    font-size: 48px;
-    border-bottom: 2px solid red;
-    padding-bottom: 30px;
+    margin-bottom: 10px;
 }
 
-/* Cow Type Section End */
+.cow-description {
+    text-align: center;
+
+    color: #667085;
+
+    font-size: 17px;
+
+    margin-bottom: 40px;
+}
 
 
 /* ==============================
@@ -109,23 +294,136 @@
 
 .images {
     display: flex;
-    justify-content: center;
+
+    justify-content: space-between;
+
     gap: 30px;
+
     margin-top: 30px;
-   
-    align-items: center;
-   
-    
 }
 
-.images div {
-    width: 300px;
+
+/* ==============================
+        Cow Card
+================================= */
+
+.cow-card {
+    width: 33.33%;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 40px rgba(30, 41, 59, 0.12);
+
+    transition: 0.4s ease;
 }
 
-.images img {
+.cow-card:hover {
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 25px 55px rgba(30, 41, 59, 0.2);
+}
+
+
+/* ==============================
+        Cow Images
+================================= */
+
+.cow-card img {
     width: 100%;
-    height: 300px;
+    height: 270px;
+
+    display: block;
+
     object-fit: cover;
+
+    transition: 0.4s ease;
+
+    clip-path: polygon(
+        5% 0,
+        95% 0,
+        100% 8%,
+        100% 92%,
+        95% 100%,
+        5% 100%,
+        0 92%,
+        0 8%
+    );
 }
 
-/* Images Section End */
+
+/* ==============================
+        Image Hover
+================================= */
+
+.cow-card img:hover {
+    transform: scale(1);
+}
+
+
+/* ==============================
+        Responsive Design
+================================= */
+
+@media (max-width: 900px) {
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .red,
+    #cow-type {
+        width: 90%;
+        padding: 40px;
+    }
+
+    .images {
+        gap: 20px;
+    }
+
+    .cow-card img {
+        height: 220px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-subtitle {
+        letter-spacing: 3px;
+    }
+
+    .hero-text {
+        font-size: 17px;
+    }
+
+    .red h2,
+    #cow-type h2 {
+        font-size: 32px;
+    }
+
+    .red p {
+        font-size: 17px;
+    }
+
+    .images {
+        flex-direction: column;
+    }
+
+    .cow-card {
+        width: 100%;
+    }
+
+    .cow-card img {
+        height: 250px;
+    }
+}
